@@ -3,7 +3,7 @@
 
 
   export interface IGraphQLResponseRoot {
-    data?: IQuery | IMutation | ISubscription;
+    data?: IQuery;
     errors?: Array<IGraphQLResponseError>;
   }
 
@@ -18,13 +18,11 @@
     column: number;
   }
 
-  /**
-    description: Query type for all get requests which will not change persistent data
-  */
+  
   export interface IQuery {
     __typename?: "Query";
     findUser: IUserType | null;
-    login: IUserTokenType | null;
+    deleteUser: IUserType | null;
 }
 
   
@@ -32,49 +30,6 @@
     __typename?: "UserType";
     id: number | null;
     email: string | null;
-    type: string | null;
-    password: string | null;
-    name: string | null;
-    settings: IUserSettings | null;
-}
-
-  
-  export interface IUserSettings {
-    __typename?: "UserSettings";
-    sidebar: boolean | null;
-}
-
-  
-  export interface IUserTokenType {
-    __typename?: "UserTokenType";
-    token: string | null;
-    user: IUserType | null;
-}
-
-  /**
-    description: Mutation type for all requests which will change persistent data
-  */
-  export interface IMutation {
-    __typename?: "Mutation";
-    publishSignal: IUserMessage | null;
-    deleteUser: IUserType | null;
-    updateUser: IUserType | null;
-    addUser: IUserType | null;
-}
-
-  
-  export interface IUserMessage {
-    __typename?: "UserMessage";
-    message: string | null;
-}
-
-  /**
-    description: Subscription type for all rabbitmq subscriptions via pub sub
-  */
-  export interface ISubscription {
-    __typename?: "Subscription";
-    subscribeToUserMessagesBasic: IUserMessage | null;
-    subscribeToUserMessagesWithFilter: IUserMessage | null;
 }
 
 
