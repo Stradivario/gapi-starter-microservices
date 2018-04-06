@@ -2,6 +2,7 @@ before_script:
   - npm install
   - npm i -g gapi-cli
   - npm i -g ts-node
+  - npm i -g typescript
 script: npm start & npm test
 env:
   - DEPLOY_PLATFORM=heroku
