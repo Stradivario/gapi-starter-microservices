@@ -23,7 +23,7 @@ npm i -g @gapi/cli
 #### Type the following command to create new project from scratch via CLI
 
 ```bash
-gapi new my-project
+gapi new my-project --microservices
 ```
 
 #### To start project for "development" type:
