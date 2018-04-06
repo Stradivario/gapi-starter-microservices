@@ -3,12 +3,13 @@ import {
   GraphQLNonNull,
   GapiController,
   Type,
-  Query,
   GapiModule,
   Bootstrap,
   ConfigService,
   GapiServerModule,
-  Container
+  Container,
+  Mutation,
+  Query
 } from '@gapi/core';
 import { UserType } from '../types/user.type';
 import { UserService } from '../core/services/user/user.service';
@@ -18,10 +19,19 @@ export class UserQueriesController {
 
   constructor(
     private userService: UserService
-  ) {}
+  ) { }
 
   @Type(UserType)
   @Query({
+    id: {
+      type: new GraphQLNonNull(GraphQLInt)
+    }
+  })
+  initQuery(root, { id }, context): UserType {
+    return this.userService.deleteUser(id);
+  }
+  @Type(UserType)
+  @Mutation({
     id: {
       type: new GraphQLNonNull(GraphQLInt)
     }
@@ -41,6 +51,6 @@ export class UserQueriesController {
   ],
   controllers: [UserQueriesController]
 })
-export class AppModule {}
+export class AppModule { }
 
 Bootstrap(AppModule);

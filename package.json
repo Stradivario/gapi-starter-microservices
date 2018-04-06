@@ -23,7 +23,7 @@
   "dependencies": {
     "@gapi/cli": "^0.7.131",
     "@gapi/core": "^0.7.135",
-    "@gapi/microservices": "^0.7.137",
+    "@gapi/microservices": "^0.7.139",
     "apollo-link-http": "^1.5.3",
     "rxjs": "^5.5.6",
     "ts-node": "^5.0.1",
@@ -47,7 +47,7 @@
       "./src/**/*.ts"
     ],
     "events": {
-      "restart":"sleep 5 && gapi schema introspect"
+      "restart": "sleep 5 && gapi schema introspect"
     },
     "ext": "ts"
   },
