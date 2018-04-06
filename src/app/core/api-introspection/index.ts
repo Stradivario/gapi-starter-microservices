@@ -3,7 +3,7 @@
 
 
   export interface IGraphQLResponseRoot {
-    data?: IQuery;
+    data?: IQuery | IMutation;
     errors?: Array<IGraphQLResponseError>;
   }
 
@@ -22,7 +22,7 @@
   export interface IQuery {
     __typename?: "Query";
     findUser: IUserType | null;
-    deleteUser: IUserType | null;
+    initQuery: IUserType | null;
 }
 
   
@@ -30,6 +30,12 @@
     __typename?: "UserType";
     id: number | null;
     email: string | null;
+}
+
+  
+  export interface IMutation {
+    __typename?: "Mutation";
+    deleteUser: IUserType | null;
 }
 
 
