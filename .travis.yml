@@ -1,5 +1,7 @@
 before_script:
   - npm install
+  - npm i -g gapi-cli
+  - npm i -g ts-node
 script: npm start & npm test
 env:
   - DEPLOY_PLATFORM=heroku
