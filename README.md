@@ -1,29 +1,17 @@
 # @Gapi Microservices Starter
 
-[![Build Status](https://travis-ci.org/Stradivario/gapi-starter.svg?branch=master)](https://travis-ci.org/Stradivario/gapi-starter)
+[![Build Status](https://travis-ci.org/Stradivario/gapi-starter-microservices.svg?branch=master)](https://travis-ci.org/Stradivario/gapi-starter-microservices)
 
 ## @Nginx, @Rabbitmq, @Postgres, @Sequelize, @Docker, @Graphql
 
 ## This is basic microservices example project related with [GAPI](https://github.com/Stradivario/gapi)
 
-## To check advanced example project go to [advanced-example](https://github.com/Stradivario/gapi-starter-postgres-sequelize-rabbitmq)
-
-Heroku ready!
-
-Just set environment variable for graphiql websocket protocol `GRAPHIQL_WS_PATH=your-app-name.herokuapp.com`
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-Basic example has heroku ready button so global dependencies like ts-node and gapi-cli are installed inside project so Heroku builder will look inside node_modules.If you don't use heroku just write the following command:
-
-```bash
-npm uninstall @gapi/cli ts-node
-```
+## To check advanced example project go to [advanced-example](https://github.com/Stradivario/gapi-starter-microservices-postgres-sequelize-rabbitmq)
 
 ### To start developing clone repository
 
 ```bash
-git clone https://github.com/Stradivario/gapi-starter
+git clone https://github.com/Stradivario/gapi-starter-microservices
 ```
 
 #### Better use command line utility(gapi-cli) to install it type following command:
@@ -112,7 +100,7 @@ gapi test --watch
 gapi test --before
 ```
 
-###### This command will start root/src/test.ts file and will wait for process.exit(0) so you can customize your before logic check [this](https://github.com/Stradivario/gapi-starter-postgres-sequelize-rabbitmq/blob/master/src/test.ts#L73) link for reference
+###### This command will start root/src/test.ts file and will wait for process.exit(0) so you can customize your before logic check [this](https://github.com/Stradivario/gapi-starter-microservices-postgres-sequelize-rabbitmq/blob/master/src/test.ts#L73) link for reference
 
 ### Docker
 
