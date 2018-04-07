@@ -3,7 +3,7 @@ before_script:
   - npm i -g @gapi/cli
   - npm i -g ts-node
   - npm i -g typescript
-script: npm start & npm test
+script: gapi microservices findUser & gapi microservices deleteUser & npm start & npm test
 env:
   - DEPLOY_PLATFORM=heroku
 language: node_js
