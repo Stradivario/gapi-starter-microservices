@@ -13,6 +13,7 @@ import {
 } from '@gapi/core';
 import { UserType } from '../types/user.type';
 import { UserService } from '../core/services/user/user.service';
+import { CoreModule } from '../core/core.module';
 
 @GapiController()
 export class UserQueriesController {
@@ -44,6 +45,7 @@ export class UserQueriesController {
 
 @GapiModule({
   imports: [
+    CoreModule,
     GapiServerModule.forRoot({
       ...Container.get(ConfigService).APP_CONFIG,
       port: 10001

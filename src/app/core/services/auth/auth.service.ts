@@ -19,7 +19,6 @@ export class AuthPrivateService {
     }
 
     onSubConnection(connectionParams): UserInfo {
-        return <any>{type: 'ADMIN'};
         if (connectionParams.token) {
             return this.validateToken(connectionParams.token, 'Subscription');
         } else {
