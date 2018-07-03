@@ -4,21 +4,50 @@
       "queryType": {
         "name": "Query"
       },
-      "mutationType": null,
+      "mutationType": {
+        "name": "Mutation"
+      },
       "subscriptionType": null,
       "types": [
         {
           "kind": "OBJECT",
           "name": "Query",
-          "description": "Query type for all get requests which will not change persistent data",
+          "description": null,
           "fields": [
             {
               "name": "findUser",
-              "description": null,
+              "description": "",
               "args": [
                 {
                   "name": "id",
-                  "description": null,
+                  "description": "",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "Int",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "UserType",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "initQuery",
+              "description": "",
+              "args": [
+                {
+                  "name": "id",
+                  "description": "",
                   "type": {
                     "kind": "NON_NULL",
                     "name": null,
@@ -58,11 +87,11 @@
         {
           "kind": "OBJECT",
           "name": "UserType",
-          "description": null,
+          "description": "",
           "fields": [
             {
               "name": "id",
-              "description": null,
+              "description": "",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -74,7 +103,7 @@
             },
             {
               "name": "email",
-              "description": null,
+              "description": "",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -97,6 +126,44 @@
           "fields": null,
           "inputFields": null,
           "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Mutation",
+          "description": null,
+          "fields": [
+            {
+              "name": "deleteUser",
+              "description": "",
+              "args": [
+                {
+                  "name": "id",
+                  "description": "",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "Int",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "UserType",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [],
           "enumValues": null,
           "possibleTypes": null
         },

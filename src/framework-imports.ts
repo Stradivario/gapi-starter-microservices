@@ -28,6 +28,8 @@ import { readFileSync } from 'fs';
                 openBrowser: false,
                 writeEffects: false,
                 graphiQlPath: '/graphiql',
+                graphiql: true,
+                graphiQlPlayground: false,
                 authentication: AuthService,
                 graphiqlOptions: {
                     endpointURL: '/graphql',

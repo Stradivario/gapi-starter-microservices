@@ -29,6 +29,7 @@ export class UserQueriesController {
   initQuery(root, { id }, context): UserType {
     return this.userService.deleteUser(id);
   }
+
   @Type(UserType)
   @Mutation({
     id: {
