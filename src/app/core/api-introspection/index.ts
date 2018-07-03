@@ -3,7 +3,7 @@
 
 
   export interface IGraphQLResponseRoot {
-    data?: IQuery | IMutation;
+    data?: IQuery;
     errors?: Array<IGraphQLResponseError>;
   }
 
@@ -18,11 +18,12 @@
     column: number;
   }
 
-  
+  /**
+    description: Query type for all get requests which will not change persistent data
+  */
   export interface IQuery {
     __typename?: "Query";
     findUser: IUserType | null;
-    initQuery: IUserType | null;
 }
 
   
@@ -30,12 +31,6 @@
     __typename?: "UserType";
     id: number | null;
     email: string | null;
-}
-
-  
-  export interface IMutation {
-    __typename?: "Mutation";
-    deleteUser: IUserType | null;
 }
 
 

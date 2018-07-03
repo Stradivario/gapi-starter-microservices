@@ -1,21 +1,19 @@
 import {
   GraphQLInt,
   GraphQLNonNull,
-  GapiController,
+  Controller,
   Type,
-  GapiModule,
-  Bootstrap,
-  ConfigService,
-  GapiServerModule,
-  Container,
+  Module,
   Mutation,
-  Query
+  Query,
+  BootstrapFramework
 } from '@gapi/core';
 import { UserType } from '../types/user.type';
 import { UserService } from '../core/services/user/user.service';
 import { CoreModule } from '../core/core.module';
+import { FrameworkImports } from '../../framework-imports';
 
-@GapiController()
+@Controller()
 export class UserQueriesController {
 
   constructor(
@@ -42,17 +40,10 @@ export class UserQueriesController {
   }
 }
 
-
-@GapiModule({
-  imports: [
-    CoreModule,
-    GapiServerModule.forRoot({
-      ...Container.get(ConfigService).APP_CONFIG,
-      port: 10001
-    })
-  ],
+@Module({
+  imports: [CoreModule],
   controllers: [UserQueriesController]
 })
 export class AppModule { }
 
-Bootstrap(AppModule);
+BootstrapFramework(AppModule, [FrameworkImports]).toPromise();
