@@ -25,7 +25,7 @@ import { readFileSync } from 'fs';
             },
             graphql: {
                 path: '/graphql',
-                openBrowser: true,
+                openBrowser: process.env.OPEN_BROWSER === 'false' ? false : true,
                 watcherPort: 8967,
                 writeEffects: true,
                 graphiql: true,
