@@ -1,6 +1,6 @@
 {
   "name": "@gapi/starter-basic-microservices",
-  "version": "1.2.45",
+  "version": "1.2.46",
   "description": "",
   "main": "index.js",
   "scripts": {
